@@ -46,10 +46,6 @@ pub(crate) fn null(attr: &StructAttr, name: &str) -> Result<DerivedTS> {
 }
 
 fn check_attributes(attr: &StructAttr) -> Result<()> {
-    if attr.rename_all.is_some() {
-        syn_err!("`rename_all` is not applicable to unit structs");
-    }
-
     if attr.tag.is_some() {
         syn_err!("`tag` is not applicable to unit structs");
     }
